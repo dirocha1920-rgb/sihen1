@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHEIN News — Moda, Tendências & Ofertas</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #e8294b;
+    --red-light: #fff0f3;
+    --red-mid: #fde8ec;
+    --gray: #6b6b6b;
+    --gray-light: #f7f7f5;
+    --border: #ebebeb;
+    --text: #1a1a1a;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: #ffffff;
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    background: var(--red);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 8px 0;
+  }
+  .ticker-track {
+    display: inline-flex;
+    gap: 0;
+    animation: ticker 28s linear infinite;
+  }
+  .ticker-track span { padding: 0 48px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── HEADER ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0 0;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-top {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .logo-wrap img { height: 36px; object-fit: contain; }
+  .header-badge {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+    text-transform: uppercase;
+  }
+  .header-cta {
+    background: var(--red);
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .header-cta:hover { opacity: 0.85; }
+  nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 28px;
+    overflow-x: auto;
+  }
+  nav a {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--gray);
+    text-decoration: none;
+    padding-bottom: 12px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  nav a:hover, nav a.active { color: var(--red); border-bottom-color: var(--red); }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 1100px;
+    margin: 48px auto 0;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 40px;
+    align-items: start;
+  }
+  .hero-main .kicker {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    color: var(--red);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .kicker::before { content: ''; display: block; width: 24px; height: 1px; background: var(--red); }
+  .hero-main h1 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.15;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+  .hero-main p.lead {
+    font-size: 17px;
+    color: var(--gray);
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 24px;
+  }
+  .hero-img {
+    background: var(--red-mid);
+    border-radius: 12px;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-img-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    text-align: center;
+  }
+  .hero-img .big-pct {
+    font-family: var(--serif);
+    font-size: 96px;
+    font-weight: 600;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hero-img .off-text {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .hero-img .sub-text {
+    font-size: 13px;
+    color: var(--gray);
+    font-weight: 300;
+  }
+  .badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--red-light);
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+    border: 1px solid #fac0cc;
+  }
+  .badge-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; animation: pulse 1.4s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+
+  /* ── DIVIDER SECTION ── */
+  .section-divider {
+    max-width: 1100px;
+    margin: 56px auto 0;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-divider h2 {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 400;
+    white-space: nowrap;
+    color: var(--text);
+  }
+  .section-divider .line { flex: 1; height: 1px; background: var(--border); }
+  .section-divider .see-all {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--red);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  /* ── CARD GRID ── */
+  .card-grid {
+    max-width: 1100px;
+    margin: 28px auto 0;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .card {
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+    cursor: pointer;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(232,41,75,0.08); }
+  .card-thumb {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 14px;
+    color: var(--gray);
+    position: relative;
+    overflow: hidden;
+  }
+  .card-thumb.pink   { background: linear-gradient(135deg, #fff0f3 0%, #fde0e8 100%); }
+  .card-thumb.peach  { background: linear-gradient(135deg, #fff5f0 0%, #ffe0d4 100%); }
+  .card-thumb.lilac  { background: linear-gradient(135deg, #f5f0ff 0%, #eddcff 100%); }
+  .card-thumb.mint   { background: linear-gradient(135deg, #f0fff8 0%, #d4f5ea 100%); }
+  .card-thumb.lemon  { background: linear-gradient(135deg, #fffbf0 0%, #fef3c7 100%); }
+  .card-thumb.blush  { background: linear-gradient(135deg, #fdf0f5 0%, #f9d5e5 100%); }
+  .thumb-emoji { font-size: 52px; filter: none; }
+  .thumb-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--red);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.04em;
+  }
+  .thumb-badge.soft {
+    background: var(--text);
+    color: #fff;
+  }
+  .card-body { padding: 20px; }
+  .card-cat {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    color: var(--red);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .card h3 {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .card p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+  .card-footer {
+    padding: 12px 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-date { font-size: 11px; color: #aaa; letter-spacing: 0.04em; }
+  .read-link {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--red);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .read-link::after { content: '→'; }
+
+  /* ── PROMO STRIP ── */
+  .promo-strip {
+    max-width: 1100px;
+    margin: 52px auto 0;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .promo-card {
+    background: var(--gray-light);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+  .promo-card:hover { background: var(--red-mid); border-color: #fac0cc; }
+  .promo-card .icon { font-size: 28px; margin-bottom: 12px; }
+  .promo-card .pct { font-family: var(--serif); font-size: 30px; font-weight: 600; color: var(--red); margin-bottom: 4px; }
+  .promo-card .pct-label { font-size: 12px; color: var(--gray); font-weight: 300; }
+  .promo-card .pct-cat { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+
+  /* ── FEATURED ARTICLE ── */
+  .featured {
+    max-width: 1100px;
+    margin: 56px auto 0;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    background: var(--gray-light);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .featured-text { padding: 48px 0 48px 48px; }
+  .featured-text .kicker { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; color: var(--red); text-transform: uppercase; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .featured-text h2 { font-family: var(--serif); font-size: 34px; font-weight: 600; line-height: 1.25; margin-bottom: 16px; color: var(--text); }
+  .featured-text p { font-size: 15px; color: var(--gray); font-weight: 300; line-height: 1.75; margin-bottom: 24px; }
+  .featured-visual {
+    height: 360px;
+    background: linear-gradient(135deg, #ffe0e8 0%, #ffc7d6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .featured-visual .big-icon { font-size: 72px; }
+  .featured-visual .visual-text { font-family: var(--serif); font-size: 16px; color: var(--red); font-style: italic; }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1.5px solid var(--red);
+    color: var(--red);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 22px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { background: var(--red); color: #fff; }
+
+  /* ── NEWS ROW ── */
+  .news-list {
+    max-width: 1100px;
+    margin: 48px auto 0;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+  }
+  .news-items { display: flex; flex-direction: column; gap: 24px; }
+  .news-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-thumb {
+    height: 72px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+  .news-item .cat { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; color: var(--red); text-transform: uppercase; margin-bottom: 4px; }
+  .news-item h4 { font-family: var(--serif); font-size: 17px; font-weight: 600; line-height: 1.35; margin-bottom: 6px; color: var(--text); }
+  .news-item p { font-size: 13px; color: var(--gray); font-weight: 300; }
+  .news-item .meta { font-size: 11px; color: #bbb; margin-top: 8px; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 90px; }
+  .sidebar-section { margin-bottom: 36px; }
+  .sidebar-title { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .trending-item { display: flex; align-items: baseline; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .trending-item:last-child { border-bottom: none; }
+  .trending-num { font-family: var(--serif); font-size: 20px; color: #e0e0e0; font-weight: 600; min-width: 24px; }
+  .trending-text { font-size: 13px; color: var(--text); font-weight: 400; line-height: 1.4; }
+  .coupon-box {
+    background: var(--red-mid);
+    border: 1px dashed #f5a5b8;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  .coupon-code {
+    font-family: 'Courier New', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 0.1em;
+    background: #fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    display: inline-block;
+    margin: 12px 0;
+    border: 1px dashed #f5a5b8;
+  }
+  .coupon-box p { font-size: 12px; color: var(--gray); margin-top: 8px; font-weight: 300; }
+  .coupon-box .coupon-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); font-weight: 500; margin-bottom: 6px; }
+  .copy-btn { margin-top: 12px; background: var(--red); color: #fff; border: none; padding: 8px 20px; border-radius: 100px; font-size: 12px; font-weight: 500; cursor: pointer; font-family: var(--sans); transition: opacity 0.2s; }
+  .copy-btn:hover { opacity: 0.85; }
+
+  /* ── NEWSLETTER ── */
+  .newsletter-strip {
+    max-width: 1100px;
+    margin: 56px auto;
+    padding: 0 24px;
+  }
+  .newsletter-inner {
+    background: var(--red);
+    border-radius: 16px;
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .newsletter-text h3 { font-family: var(--serif); font-size: 28px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+  .newsletter-text p { font-size: 14px; color: rgba(255,255,255,0.75); font-weight: 300; }
+  .newsletter-form { display: flex; gap: 8px; flex-shrink: 0; }
+  .newsletter-form input {
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 100px;
+    padding: 11px 20px;
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 13px;
+    width: 240px;
+    outline: none;
+  }
+  .newsletter-form input::placeholder { color: rgba(255,255,255,0.6); }
+  .newsletter-form button {
+    background: #fff;
+    color: var(--red);
+    border: none;
+    border-radius: 100px;
+    padding: 11px 22px;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+  }
+  .newsletter-form button:hover { opacity: 0.9; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 24px;
+    text-align: center;
+  }
+  footer p { font-size: 12px; color: #bbb; font-weight: 300; margin-top: 12px; }
+  footer img { height: 24px; opacity: 0.4; }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-img { height: 240px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .promo-strip { grid-template-columns: repeat(2, 1fr); }
+    .featured { grid-template-columns: 1fr; }
+    .featured-text { padding: 32px; }
+    .news-list { grid-template-columns: 1fr; }
+    .newsletter-inner { flex-direction: column; text-align: center; }
+    .newsletter-form { flex-direction: column; width: 100%; }
+    .newsletter-form input { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span>✦ FRETE GRÁTIS acima de R$199</span>
+    <span>✦ ATÉ 80% OFF em milhares de itens</span>
+    <span>✦ App exclusivo: cupom de 15% na primeira compra</span>
+    <span>✦ Coleção Verão 2025 chegou com tudo</span>
+    <span>✦ Flash Sale toda sexta — não perca!</span>
+    <span>✦ FRETE GRÁTIS acima de R$199</span>
+    <span>✦ ATÉ 80% OFF em milhares de itens</span>
+    <span>✦ App exclusivo: cupom de 15% na primeira compra</span>
+    <span>✦ Coleção Verão 2025 chegou com tudo</span>
+    <span>✦ Flash Sale toda sexta — não perca!</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-top">
+    <div class="logo-wrap">
+      <img src="https://www.pngmart.com/files/23/Shein-Logo-PNG-Pic.png" alt="SHEIN" />
+    </div>
+    <span class="header-badge">Moda · Tendências · Promoções</span>
+    <a href="https://www.shein.com.br" target="_blank" class="header-cta">Ir à loja →</a>
+  </div>
+  <nav>
+    <a href="#" class="active">Destaque</a>
+    <a href="#">Promoções</a>
+    <a href="#">Tendências</a>
+    <a href="#">Coleções</a>
+    <a href="#">Looks</a>
+    <a href="#">Cupons</a>
+    <a href="#">Flash Sale</a>
+    <a href="#">Novidades</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-main">
+    <div class="badge-pill">
+      <span class="badge-dot"></span>
+      Flash Sale ativa agora
+    </div>
+    <div class="kicker">Destaque da semana</div>
+    <h1>O maior evento de moda do Brasil chegou na SHEIN</h1>
+    <p class="lead">Descontos de até 80%, frete grátis e looks incríveis para todo estilo. Descubra por que milhões de brasileiras escolhem a SHEIN toda temporada.</p>
+    <a href="https://www.shein.com.br" target="_blank" class="header-cta" style="font-size: 14px; padding: 12px 28px;">Ver todas as ofertas →</a>
+  </div>
+  <div class="hero-img">
+    <div class="hero-img-inner">
+      <div class="big-pct">80%</div>
+      <div class="off-text">de desconto</div>
+      <div class="sub-text">em mais de 50.000 produtos</div>
+      <div style="margin-top: 20px; font-size: 13px; color: var(--gray); border-top: 1px solid #f0d0d8; padding-top: 16px; width: 100%;">
+        <span style="font-weight: 500; color: var(--text);">+ Frete grátis</span> em pedidos acima de R$199
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO STRIP -->
+<div class="promo-strip" style="margin-top: 40px;">
+  <div class="promo-card">
+    <div class="icon">👗</div>
+    <div class="pct-cat">Vestidos</div>
+    <div class="pct">-60%</div>
+    <div class="pct-label">na categoria</div>
+  </div>
+  <div class="promo-card">
+    <div class="icon">👟</div>
+    <div class="pct-cat">Calçados</div>
+    <div class="pct">-55%</div>
+    <div class="pct-label">na categoria</div>
+  </div>
+  <div class="promo-card">
+    <div class="icon">💄</div>
+    <div class="pct-cat">Beleza</div>
+    <div class="pct">-70%</div>
+    <div class="pct-label">na categoria</div>
+  </div>
+  <div class="promo-card">
+    <div class="icon">🏠</div>
+    <div class="pct-cat">Casa & Deco</div>
+    <div class="pct">-50%</div>
+    <div class="pct-label">na categoria</div>
+  </div>
+</div>
+
+<!-- SECTION TITLE -->
+<div class="section-divider">
+  <div class="line"></div>
+  <h2>Últimas notícias</h2>
+  <div class="line"></div>
+  <a href="#" class="see-all">Ver todas →</a>
+</div>
+
+<!-- CARD GRID -->
+<div class="card-grid">
+  <div class="card">
+    <div class="card-thumb pink">
+      <span class="thumb-badge">NOVO</span>
+      <span class="thumb-emoji">🌸</span>
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Coleção</div>
+      <h3>Coleção Romântica de Verão 2025 é lançada com mais de 3.000 peças</h3>
+      <p>Tons rosados, florais delicados e tecidos leves dominam a nova coleção que chegou com tudo para a estação mais quente do ano.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-date">23 Abr 2025</span>
+      <a href="https://www.shein.com.br" target="_blank" class="read-link">Leia mais</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-thumb peach">
+      <span class="thumb-badge" style="background: #ff6b35;">-70%</span>
+      <span class="thumb-emoji">⚡</span>
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Promoção</div>
+      <h3>Flash Sale de quinta: beleza e skincare com até 70% off</h3>
+      <p>Cremes, séricos, paletas e muito mais com preços nunca vistos. Só até meia-noite — aproveite enquanto tem estoque!</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-date">22 Abr 2025</span>
+      <a href="https://www.shein.com.br" target="_blank" class="read-link">Leia mais</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-thumb lilac">
+      <span class="thumb-badge soft">TENDÊNCIA</span>
+      <span class="thumb-emoji">✨</span>
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Tendências</div>
+      <h3>Cottagecore domina o verão: como montar o look perfeito</h3>
+      <p>A estética campestre com rendas, florais e linhos chegou com força nas redes sociais. A SHEIN tem peças incríveis para esse estilo por menos de R$60.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-date">21 Abr 2025</span>
+      <a href="https://www.shein.com.br" target="_blank" class="read-link">Leia mais</a>
+    </div>
+  </div>
+</div>
+
+<!-- SECOND CARD ROW -->
+<div class="card-grid" style="margin-top: 24px;">
+  <div class="card">
+    <div class="card-thumb mint">
+      <span class="thumb-badge" style="background: #1dab72;">FRETE FREE</span>
+      <span class="thumb-emoji">📦</span>
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Benefício</div>
+      <h3>Frete grátis ilimitado: como aproveitar ao máximo na SHEIN</h3>
+      <p>Sabia que dá pra receber pedidos sem pagar frete o mês todo? Entenda como funciona o programa de benefícios da plataforma.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-date">20 Abr 2025</span>
+      <a href="https://www.shein.com.br" target="_blank" class="read-link">Leia mais</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-thumb lemon">
+      <span class="thumb-badge" style="background: #c79a00; color:#fff;">DICA</span>
+      <span class="thumb-emoji">💡</span>
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Guia</div>
+      <h3>5 truques para encontrar as melhores ofertas antes de todo mundo</h3>
+      <p>Ativar notificações, usar filtros de preço e acompanhar o calendário de promoções são algumas das estratégias que valem ouro.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-date">19 Abr 2025</span>
+      <a href="https://www.shein.com.br" target="_blank" class="read-link">Leia mais</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-thumb blush">
+      <span class="thumb-badge">TOP</span>
+      <span class="thumb-emoji">👑</span>
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Ranking</div>
+      <h3>Os 10 produtos mais vendidos da SHEIN no Brasil em abril</h3>
+      <p>De vestidos midi a tênis chunky, veja o que as brasileiras estão colocando no carrinho com mais frequência neste mês.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-date">18 Abr 2025</span>
+      <a href="https://www.shein.com.br" target="_blank" class="read-link">Leia mais</a>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED ARTICLE -->
+<section class="featured" style="margin-top: 56px; max-width: calc(1100px + 48px); margin-left: auto; margin-right: auto;">
+  <div class="featured-text">
+    <div class="kicker"><span>✦</span> Especial do mês</div>
+    <h2>A revolução silenciosa da moda acessível chegou ao Brasil</h2>
+    <p>Mais de 15 milhões de brasileiras já compraram na SHEIN em 2025. O segredo? Uma combinação única de tendências atualizadas diariamente, preços que cabem no bolso e uma experiência de compra cada vez mais fácil e confiável.</p>
+    <p>Com novo centro de distribuição no Brasil, os prazos de entrega encurtaram — e as promoções só ficam melhores.</p>
+    <a href="https://www.shein.com.br" target="_blank" class="btn-outline">Explorar coleção completa</a>
+  </div>
+  <div class="featured-visual">
+    <div class="big-icon">🛍️</div>
+    <div class="visual-text">moda para todas</div>
+  </div>
+</section>
+
+<!-- NEWS LIST + SIDEBAR -->
+<section class="news-list">
+  <div class="news-items">
+    <div class="section-divider" style="padding: 0; max-width: 100%; margin-top: 0;">
+      <div class="line"></div>
+      <h2 style="font-size: 20px;">Mais lidas</h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-thumb pink"><span style="font-size:26px;">🎀</span></div>
+      <div>
+        <div class="cat">Looks</div>
+        <h4>Como criar looks completos gastando menos de R$150 na SHEIN</h4>
+        <p>Combinações estratégicas de peças básicas e acessórios podem transformar qualquer guarda-roupa sem pesar no orçamento.</p>
+        <div class="meta">22 Abr 2025 · 4 min de leitura</div>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-thumb" style="background:#fff5f0;"><span style="font-size:26px;">📱</span></div>
+      <div>
+        <div class="cat">App</div>
+        <h4>Novidades no app SHEIN: jogue, acumule pontos e troque por descontos</h4>
+        <p>A seção de games dentro do app distribuiu mais de R$2 milhões em cupons nos últimos três meses. Saiba como participar.</p>
+        <div class="meta">20 Abr 2025 · 3 min de leitura</div>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-thumb" style="background:#f5f0ff;"><span style="font-size:26px;">🌿</span></div>
+      <div>
+        <div class="cat">Sustentabilidade</div>
+        <h4>SHEIN lança linha eco-friendly com tecidos reciclados e embalagens biodegradáveis</h4>
+        <p>A coleção "Green Future" chega ao Brasil com mais de 500 peças sustentáveis — e os preços continuam competitivos.</p>
+        <div class="meta">18 Abr 2025 · 5 min de leitura</div>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-thumb" style="background:#fff8e0;"><span style="font-size:26px;">💳</span></div>
+      <div>
+        <div class="cat">Pagamento</div>
+        <h4>Parcelamento em até 12x sem juros: como aproveitar na prática</h4>
+        <p>A SHEIN ampliou as opções de parcelamento sem acréscimo. Entenda quais cartões participam e como usar o Pix com desconto extra.</p>
+        <div class="meta">16 Abr 2025 · 3 min de leitura</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-title">Mais buscados</div>
+      <div class="trending-item">
+        <span class="trending-num">01</span>
+        <span class="trending-text">Vestido linho verão</span>
+      </div>
+      <div class="trending-item">
+        <span class="trending-num">02</span>
+        <span class="trending-text">Tênis chunky branco</span>
+      </div>
+      <div class="trending-item">
+        <span class="trending-num">03</span>
+        <span class="trending-text">Biquíni frente única</span>
+      </div>
+      <div class="trending-item">
+        <span class="trending-num">04</span>
+        <span class="trending-text">Blusa cropped floral</span>
+      </div>
+      <div class="trending-item">
+        <span class="trending-num">05</span>
+        <span class="trending-text">Óculos oversized</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-title">Cupom exclusivo</div>
+      <div class="coupon-box">
+        <div class="coupon-label">✦ Use no app ou site</div>
+        <div class="coupon-code">SHEIN15</div>
+        <p>15% extra em qualquer pedido acima de R$99. Válido até 30/04/2025.</p>
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('SHEIN15'); this.textContent='Copiado! ✓'; setTimeout(()=>this.textContent='Copiar código', 2000)">Copiar código</button>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-title">Próximas promoções</div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--gray-light); border-radius: 8px;">
+          <div style="background: var(--red); color:#fff; font-size: 11px; font-weight: 600; padding: 6px 10px; border-radius: 6px; text-align: center; min-width: 40px; line-height:1.2;">25<br>ABR</div>
+          <div><div style="font-size:13px; font-weight:500; color:var(--text);">Flash Sale 5ª feira</div><div style="font-size:11px; color:var(--gray);">Moda feminina até -75%</div></div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--gray-light); border-radius: 8px;">
+          <div style="background: #ff7b35; color:#fff; font-size: 11px; font-weight: 600; padding: 6px 10px; border-radius: 6px; text-align: center; min-width: 40px; line-height:1.2;">01<br>MAI</div>
+          <div><div style="font-size:13px; font-weight:500; color:var(--text);">Feriado de Moda</div><div style="font-size:11px; color:var(--gray);">Dia do Trabalho com frete free</div></div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--gray-light); border-radius: 8px;">
+          <div style="background: #9b5de5; color:#fff; font-size: 11px; font-weight: 600; padding: 6px 10px; border-radius: 6px; text-align: center; min-width: 40px; line-height:1.2;">11<br>MAI</div>
+          <div><div style="font-size:13px; font-weight:500; color:var(--text);">Dia das Mães SHEIN</div><div style="font-size:11px; color:var(--gray);">Presentes a partir de R$19</div></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter-strip">
+  <div class="newsletter-inner">
+    <div class="newsletter-text">
+      <h3>Não perca nenhuma promoção</h3>
+      <p>Receba no seu e-mail todas as ofertas exclusivas, cupons e lançamentos.</p>
+    </div>
+    <div class="newsletter-form">
+      <input type="email" placeholder="seu@email.com" />
+      <button>Quero ofertas</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img src="https://www.pngmart.com/files/23/Shein-Logo-PNG-Pic.png" alt="SHEIN" />
+  <p>Este é um site de notícias e conteúdo informativo sobre a SHEIN. Não somos afiliados oficialmente à SHEIN Group Limited.<br>Todos os preços e promoções são meramente ilustrativos. Consulte o site oficial para ofertas vigentes.</p>
+</footer>
+
+</body>
+</html>

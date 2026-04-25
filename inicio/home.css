@@ -1,0 +1,159 @@
+/* ============================================
+   Home/Welcome Page Styles
+   ============================================ */
+
+/* Header Centered (for home page) */
+.header-centered {
+    justify-content: center;
+}
+
+/* Welcome Card */
+.welcome-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 24px 20px 28px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Coupon Alert Box */
+.coupon-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #22c55e;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+.coupon-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    color: #22c55e;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    box-shadow: 0 2px 4px rgba(34, 197, 94, 0.2);
+}
+
+.coupon-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.coupon-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 14px;
+    color: #166534;
+    line-height: 1.4;
+}
+
+.coupon-text span {
+    font-weight: 400;
+}
+
+.coupon-text strong {
+    font-weight: 700;
+}
+
+/* Welcome Content */
+.welcome-content {
+    padding: 0 4px;
+}
+
+.welcome-text {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.welcome-text strong {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.welcome-text.highlight {
+    margin-top: 24px;
+}
+
+.welcome-text.cta-text {
+    margin-bottom: 24px;
+}
+
+/* Start Button */
+.start-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+}
+
+.start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.5);
+}
+
+.start-btn:active {
+    transform: translateY(0);
+}
+
+.tshirt-icon {
+    width: 22px;
+    height: 22px;
+}
+
+/* Mobile Optimizations for Home */
+@media screen and (max-width: 380px) {
+    .welcome-card {
+        padding: 20px 16px 24px;
+    }
+    
+    .coupon-box {
+        padding: 14px;
+        gap: 10px;
+    }
+    
+    .coupon-icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .coupon-text {
+        font-size: 13px;
+    }
+    
+    .welcome-text {
+        font-size: 13px;
+        margin-bottom: 16px;
+    }
+    
+    .start-btn {
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+}

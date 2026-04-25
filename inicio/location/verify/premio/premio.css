@@ -1,0 +1,191 @@
+/* ============================================
+   Premio/Prize Selection Page Styles
+   ============================================ */
+
+/* Main container adjustments */
+.premio-main {
+    padding: 20px 15px;
+    align-items: center;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Page Title */
+.page-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+/* Prize Card */
+.prize-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid #e5e5e5;
+    transition: all 0.3s ease;
+}
+
+.prize-card:hover {
+    border-color: #22c55e;
+    box-shadow: 0 6px 25px rgba(34, 197, 94, 0.15);
+}
+
+/* Scarcity Badge */
+.scarcity-badge {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+.fire-icon {
+    font-size: 14px;
+}
+
+/* Prize Image Container */
+.prize-image-container {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    background-color: #f8f8f8;
+}
+
+.prize-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Prize Description */
+.prize-description {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.prize-description strong {
+    color: #1a1a1a;
+}
+
+/* Prize Button */
+.prize-btn {
+    width: 100%;
+    padding: 14px 24px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.prize-btn:hover {
+    background-color: #333333;
+    transform: translateY(-2px);
+}
+
+.prize-btn:active {
+    transform: translateY(0);
+}
+
+/* Separator */
+.separator {
+    font-size: 16px;
+    color: #888888;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+/* Footer adjustments for premio page */
+.premio-footer {
+    padding-top: 30px;
+}
+
+/* Policies Section */
+.policies {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.policies-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0066cc;
+    margin-bottom: 12px;
+}
+
+.policy-link {
+    display: block;
+    font-size: 13px;
+    color: #0066cc;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.2s ease;
+}
+
+.policy-link:hover {
+    color: #0052a3;
+    text-decoration: underline;
+}
+
+.policy-arrow {
+    margin-right: 4px;
+}
+
+/* Mobile Optimizations */
+@media screen and (max-width: 380px) {
+    .page-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .prize-card {
+        padding: 16px;
+    }
+
+    .prize-description {
+        font-size: 13px;
+    }
+
+    .prize-btn {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    .separator {
+        padding: 16px 0;
+    }
+}

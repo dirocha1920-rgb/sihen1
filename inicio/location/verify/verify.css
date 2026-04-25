@@ -1,0 +1,226 @@
+/* ============================================
+   Verify/Loading Page Styles
+   ============================================ */
+
+/* Verify Card */
+.verify-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 40px 24px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Loading State */
+.verify-loading {
+    width: 100%;
+    text-align: center;
+}
+
+.verify-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 40px;
+    background-color: #e5e5e5;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #1a1a1a;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    transition: width 0.1s ease-out;
+    min-width: 50px;
+}
+
+.progress-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.verify-status {
+    font-size: 14px;
+    color: #666666;
+    margin-top: 8px;
+}
+
+/* Success State */
+.verify-success {
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.verify-success.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.success-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    color: #22c55e;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 2;
+}
+
+.success-icon svg circle {
+    fill: none;
+    stroke: #22c55e;
+}
+
+.success-icon svg polyline {
+    stroke: #22c55e;
+    stroke-width: 2.5;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.success-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.success-text {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.5;
+    margin-bottom: 28px;
+}
+
+/* Quiz Button */
+.quiz-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+    animation: fadeInUp 0.5s ease 0.3s both;
+}
+
+.quiz-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.5);
+}
+
+.quiz-btn:active {
+    transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Optimizations */
+@media screen and (max-width: 380px) {
+    .verify-card {
+        padding: 32px 20px;
+    }
+
+    .verify-title {
+        font-size: 16px;
+        margin-bottom: 24px;
+    }
+
+    .progress-bar {
+        height: 36px;
+    }
+
+    .progress-text {
+        font-size: 12px;
+    }
+
+    .verify-status {
+        font-size: 13px;
+    }
+
+    .success-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .success-title {
+        font-size: 20px;
+    }
+
+    .success-text {
+        font-size: 13px;
+    }
+
+    .quiz-btn {
+        padding: 14px 30px;
+        font-size: 14px;
+    }
+}

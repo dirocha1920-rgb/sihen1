@@ -1,0 +1,304 @@
+/* ============================================
+   Makeup Selection Page Styles
+   ============================================ */
+
+/* Main container */
+.make-main {
+    padding: 15px;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Step Content */
+.step-content {
+    display: none;
+    width: 100%;
+    max-width: 420px;
+    animation: fadeIn 0.4s ease;
+}
+
+.step-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Make Card */
+.make-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 24px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+/* Category Section */
+.category-section {
+    margin-bottom: 24px;
+}
+
+.category-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Checkbox Item */
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.checkbox-item:hover {
+    background-color: #f8f8f8;
+    margin: 0 -10px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.checkbox-item input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-item .checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d0d0d0;
+    border-radius: 4px;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.checkbox-item input[type="checkbox"]:checked+.checkmark {
+    background-color: #22c55e;
+    border-color: #22c55e;
+}
+
+.checkbox-item input[type="checkbox"]:checked+.checkmark::after {
+    content: '✓';
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.item-text {
+    font-size: 14px;
+    color: #333333;
+}
+
+/* Skin Tones Grid */
+.skin-tones-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    justify-items: center;
+    margin: 30px 0;
+}
+
+.skin-tone {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.skin-tone:hover {
+    transform: scale(1.1);
+}
+
+.skin-tone.selected {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.3);
+    transform: scale(1.1);
+}
+
+.skin-tone.hot::after {
+    content: 'Hot';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ef4444;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 8px;
+}
+
+/* Confirm Button */
+.confirm-btn {
+    width: 100%;
+    padding: 16px 24px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.confirm-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.confirm-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5);
+}
+
+.btn-icon {
+    font-size: 16px;
+}
+
+/* Mobile */
+@media screen and (max-width: 380px) {
+    .make-card {
+        padding: 20px 16px;
+    }
+
+    .card-title {
+        font-size: 15px;
+    }
+
+    .category-title {
+        font-size: 14px;
+    }
+
+    .item-text {
+        font-size: 13px;
+    }
+
+    .skin-tones-grid {
+        gap: 10px;
+    }
+
+    .skin-tone {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* ============================================
+   Popup Modal Styles
+   ============================================ */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-modal {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 35px 30px;
+    margin: 0 20px;
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.popup-overlay.active .popup-modal {
+    transform: scale(1);
+    animation: popIn 0.4s ease;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.popup-text {
+    font-size: 15px;
+    color: #333333;
+    line-height: 1.5;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.popup-spinner {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+    border: 4px solid #e5e5e5;
+    border-top-color: #22c55e;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

